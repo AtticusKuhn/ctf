@@ -21,8 +21,10 @@ model User {
   hashedPassword String?
   role           String   @default("USER")
 
-  tokens   Token[]
-  sessions Session[]
+  tokens     Token[]
+  sessions   Session[]
+  challenges Challenge[]
+
 }
 
 model Session {
@@ -63,3 +65,16 @@ model Token {
 // enum TokenType {
 //   RESET_PASSWORD
 // }
+
+model Challenge {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  title     String
+  body      String
+  tags      String
+  authorId  Int
+  author    User     @relation(fields: [authorId], references: [id])
+
+  difficulty String
+}
