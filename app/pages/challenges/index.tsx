@@ -10,6 +10,7 @@ export const ChallengesList = () => {
   const page = Number(router.query.page) || 0
   const [{ challenges, hasMore }] = usePaginatedQuery(getChallenges, {
     orderBy: { id: "asc" },
+    where:{},
     skip: ITEMS_PER_PAGE * page,
     take: ITEMS_PER_PAGE,
   })
@@ -23,7 +24,7 @@ export const ChallengesList = () => {
         {challenges.map((challenge) => (
           <li key={challenge.id}>
             <Link href={Routes.ShowChallengePage({ challengeId: challenge.id })}>
-              <a>{challenge.name}</a>
+              <a>{challenge.title}</a>
             </Link>
           </li>
         ))}

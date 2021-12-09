@@ -1,6 +1,6 @@
 import { Link, useRouter, useMutation, BlitzPage, Routes } from "blitz"
 import Layout from "app/core/layouts/Layout"
-import createChallenge from "app/challenges/mutations/createChallenge"
+import createChallenge, { CreateChallenge } from "app/challenges/mutations/createChallenge"
 import { ChallengeForm, FORM_ERROR } from "app/challenges/components/ChallengeForm"
 
 const NewChallengePage: BlitzPage = () => {
@@ -16,8 +16,8 @@ const NewChallengePage: BlitzPage = () => {
         // TODO use a zod schema for form validation
         //  - Tip: extract mutation's schema into a shared `validations.ts` file and
         //         then import and use it here
-        // schema={CreateChallenge}
-        // initialValues={{}}
+        schema={CreateChallenge}
+        initialValues={{title:"helllo"}}
         onSubmit={async (values) => {
           try {
             const challenge = await createChallengeMutation(values)
