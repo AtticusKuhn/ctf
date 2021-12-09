@@ -10,10 +10,9 @@ export function ChallengeForm<S extends typeof CreateChallenge>(props: FormProps
       <LabeledTextField name="title" label="title" placeholder="title" />
       <LabeledTextField name="body" label="body" placeholder="body" />
       <LabeledTextField name="difficulty" label="difficulty" placeholder="difficulty" />
-      <LabeledTextField name="tags" label="tags" placeholder="tags" />
+      <LabeledTextField name="categories" label="categories" placeholder="categories" />
 
       <LabeledTextField name="title" label="title" placeholder="title" />
-
     </Form>
   )
 }

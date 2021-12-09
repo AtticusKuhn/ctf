@@ -14,8 +14,8 @@ const UserInfo = () => {
   const currentUser = useCurrentUser()
   const [logoutMutation] = useMutation(logout)
 
-    return (
-      <>
+  return (
+    <>
       <>
         <button
           className="button small"
@@ -44,8 +44,7 @@ const UserInfo = () => {
         </Link>
       </>
     </>
-    );
-  
+  )
 }
 
 const Home: BlitzPage = () => {
@@ -57,13 +56,10 @@ const Home: BlitzPage = () => {
             <UserInfo />
           </Suspense>
         </div>
-        <Link href={Routes.ChallengesPage()}>
-            Challenges
-        </Link>
+        <Link href={Routes.ChallengesPage()}>Challenges</Link>
       </main>
-
     </div>
-  );
+  )
 }
 
 Home.suppressFirstRenderFlicker = true

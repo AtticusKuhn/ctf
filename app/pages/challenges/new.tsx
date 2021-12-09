@@ -17,7 +17,7 @@ const NewChallengePage: BlitzPage = () => {
         //  - Tip: extract mutation's schema into a shared `validations.ts` file and
         //         then import and use it here
         schema={CreateChallenge}
-        initialValues={{title:"helllo"}}
+        initialValues={{ title: "helllo" }}
         onSubmit={async (values) => {
           try {
             const challenge = await createChallengeMutation(values)
