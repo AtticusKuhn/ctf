@@ -1,9 +1,11 @@
+import React from "react"
 import { Suspense } from "react"
 import { Head, Link, useRouter, useQuery, useMutation, useParam, BlitzPage, Routes } from "blitz"
 import Layout from "app/core/layouts/Layout"
 import getChallenge from "app/challenges/queries/getChallenge"
 import updateChallenge from "app/challenges/mutations/updateChallenge"
-import { ChallengeForm, FORM_ERROR } from "app/challenges/components/ChallengeForm"
+import { ChallengeForm } from "app/challenges/components/ChallengeForm"
+import { FORM_ERROR } from "app/core/components/Form"
 
 export const EditChallenge = () => {
   const router = useRouter()

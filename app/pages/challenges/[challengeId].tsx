@@ -1,8 +1,10 @@
-import { Suspense } from "react"
+import React, { Suspense } from "react"
 import { Head, Link, useRouter, useQuery, useParam, BlitzPage, useMutation, Routes } from "blitz"
 import Layout from "app/core/layouts/Layout"
 import getChallenge from "app/challenges/queries/getChallenge"
 import deleteChallenge from "app/challenges/mutations/deleteChallenge"
+import Markdown from "app/components/markdown"
+import ChallengeViewer from "app/challenges/components/ChallengeViewer"
 
 export const Challenge = () => {
   const router = useRouter()
@@ -17,9 +19,10 @@ export const Challenge = () => {
       </Head>
 
       <div>
-        <h1>Challenge {challenge.id}</h1>
-        <pre>{JSON.stringify(challenge, null, 2)}</pre>
-
+        <main style={{alignContent:"center", alignItems:"center", textAlign:"center"}}>
+        <ChallengeViewer
+          {...challenge}
+        />
         <Link href={Routes.EditChallengePage({ challengeId: challenge.id })}>
           <a>Edit</a>
         </Link>
@@ -36,6 +39,7 @@ export const Challenge = () => {
         >
           Delete
         </button>
+        </main>
       </div>
     </>
   )
