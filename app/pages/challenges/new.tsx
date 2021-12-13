@@ -19,7 +19,7 @@ const NewChallengePage: BlitzPage = () => {
         //  - Tip: extract mutation's schema into a shared `validations.ts` file and
         //         then import and use it here
         schema={CreateChallenge}
-        initialValues={{ title: "helllo" }}
+        initialValues={{ title: "helllo", body:"# hello", difficulty:"hard", categories:["xss", "bugs"] }}
         
         onSubmit={async (values) => {
           try {
@@ -31,11 +31,7 @@ const NewChallengePage: BlitzPage = () => {
 
             // }
             // if(error?.issues){
-              if (error instanceof z.ZodError) {
-                console.log(error.issues);
-                return error.issues.map(issue=>({[issue.path[0]]: issue.code}))
-
-              }
+             
             // }
             console.log(error)
             // alert(errror)

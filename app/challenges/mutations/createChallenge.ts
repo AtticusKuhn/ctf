@@ -6,7 +6,7 @@ export const CreateChallenge = z.object({
   body: z.string(),
   title: z.string(),
   difficulty: z.string(),
-  categories: z.string(),
+  categories: z.array(z.string()),
 })
 
 export default resolver.pipe(
@@ -26,7 +26,6 @@ export default resolver.pipe(
         ...input,
         categories: {
           connectOrCreate: input.categories
-            .split(";")
             .map((tag) => ({ create: { name: tag }, where: { name: tag } })),
         },
       author: {
