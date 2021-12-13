@@ -41,7 +41,7 @@ export function ChallengeForm<S extends typeof CreateChallenge>(props: FormProps
      
       render={({ form: {
         mutators: { push, pop }
-      },   }) => (
+      },  handleSubmit }) => (
 
 <>
       
@@ -63,7 +63,7 @@ export function ChallengeForm<S extends typeof CreateChallenge>(props: FormProps
               {({ fields }) =>
                 fields.map((name, index) => (
                   <div key={name}>
-                    <label>Cust. #{index + 1}</label>
+                    <label>category. #{index + 1}</label>
                     <Field
                       name={`${name}`}
                       component="input"
@@ -84,15 +84,15 @@ export function ChallengeForm<S extends typeof CreateChallenge>(props: FormProps
                 //@ts-ignore
                 onClick={() => push('categories',"xss" )}
               >
-                Add Customer
+                Add category
               </button>
                 {/*@ts-ignore*/}
               <button type="button" onClick={() => pop('categories')}>
-                Remove Customer
+                Remove category
               </button>
-
-      <LabeledTextField name="title" label="title" placeholder="title" />
+            
       </div>
+              <button  onClick={handleSubmit} type="submit">create challenge</button>
       <div style={{width:"50%"}}>
 
       <Preivew />

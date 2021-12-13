@@ -1,6 +1,7 @@
 import React from "react"
 
 import Markdown from "app/components/markdown"
+import { Link, Routes } from "blitz"
 
 interface ChallengeViewerProps {
     isPreview?: boolean;
@@ -12,7 +13,11 @@ interface ChallengeViewerProps {
 const ChallengeViewer:React.FC<ChallengeViewerProps> = ({isPreview=false, title, updatedAt, body, authorId})=>{
     return <>
     <h1>{title}</h1>
-        <p>by {authorId}, {new Date(updatedAt).toLocaleDateString("en-US")}</p>
+        <p>by 
+        <Link href={Routes.ShowUserPage({userId:authorId})}>
+              <a>{authorId}</a>
+            </Link>
+            , {new Date(updatedAt).toLocaleDateString("en-US")}</p>
         <Markdown  markdown={body}/>
         <div>submit the flag</div>
         <input placeholder="submit flag" /> 

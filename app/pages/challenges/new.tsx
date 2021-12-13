@@ -19,7 +19,7 @@ const NewChallengePage: BlitzPage = () => {
         //  - Tip: extract mutation's schema into a shared `validations.ts` file and
         //         then import and use it here
         schema={CreateChallenge}
-        initialValues={{ title: "helllo", body:"# hello", difficulty:"hard", categories:["xss", "bugs"] }}
+        initialValues={{title:"string", body:"# hello", difficulty:"hard", categories:["xss", "bugs"] }}
         
         onSubmit={async (values) => {
           try {
