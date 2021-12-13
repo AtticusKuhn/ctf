@@ -39,13 +39,18 @@ export const EditChallenge = () => {
           initialValues={challenge}
           onSubmit={async (values) => {
             try {
+              const filteredValues = Object.assign(values, {
+                categories: values.categories.map((a) => a.name),
+              })
+              console.log("filteredValues", filteredValues)
               const updated = await updateChallengeMutation({
                 id: challenge.id,
-                ...values,
+                ...filteredValues,
               })
               await setQueryData(updated)
               router.push(Routes.ShowChallengePage({ challengeId: updated.id }))
             } catch (error: any) {
+              alert(error)
               console.error(error)
               return {
                 [FORM_ERROR]: error.toString(),

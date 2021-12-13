@@ -3,7 +3,7 @@ import Layout from "app/core/layouts/Layout"
 import createChallenge, { CreateChallenge } from "app/challenges/mutations/createChallenge"
 // import { ChallengeForm, FORM_ERROR } from "app/challenges/components/ChallengeForm"
 import { ChallengeForm, FORM_ERROR } from "app/challenges/components/ChallengeForm"
-import * as z from "zod";
+import * as z from "zod"
 
 const NewChallengePage: BlitzPage = () => {
   const router = useRouter()
@@ -19,8 +19,12 @@ const NewChallengePage: BlitzPage = () => {
         //  - Tip: extract mutation's schema into a shared `validations.ts` file and
         //         then import and use it here
         schema={CreateChallenge}
-        initialValues={{title:"string", body:"# hello", difficulty:"hard", categories:["xss", "bugs"] }}
-        
+        initialValues={{
+          title: "string",
+          body: "# hello",
+          difficulty: "hard",
+          categories: ["xss", "bugs"],
+        }}
         onSubmit={async (values) => {
           try {
             const challenge = await createChallengeMutation(values)
@@ -31,7 +35,7 @@ const NewChallengePage: BlitzPage = () => {
 
             // }
             // if(error?.issues){
-             
+
             // }
             console.log(error)
             // alert(errror)

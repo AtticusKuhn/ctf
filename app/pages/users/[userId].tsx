@@ -6,11 +6,11 @@ import getUser from "../../users/queries/getUser"
 export const User = () => {
   const router = useRouter()
   const userId = useParam("userId", "number")
-  if(!userId){
+  if (!userId) {
     console.log("help me", userId)
   }
-  const [user] = useQuery(getUser, userId || 1 )
-  if(!user){
+  const [user] = useQuery(getUser, userId || 1)
+  if (!user) {
     return <>oh no we couldn't find this dude</>
   }
 
@@ -23,9 +23,6 @@ export const User = () => {
       <div>
         <h1>User {user.id}</h1>
         <pre>{JSON.stringify(user, null, 2)}</pre>
-
-   
-
       </div>
     </>
   )
@@ -34,9 +31,7 @@ export const User = () => {
 const ShowUserPage: BlitzPage = () => {
   return (
     <div>
-      <p>
-        
-      </p>
+      <p></p>
 
       <Suspense fallback={<div>Loading...</div>}>
         <User />

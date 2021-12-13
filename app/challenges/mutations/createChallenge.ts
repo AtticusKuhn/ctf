@@ -25,13 +25,16 @@ export default resolver.pipe(
       data: {
         ...input,
         categories: {
-          connectOrCreate: input.categories
-            .map((tag) => ({ create: { name: tag }, where: { name: tag } })),
+          connectOrCreate: input.categories.map((tag) => ({
+            create: { name: tag },
+            where: { name: tag },
+          })),
         },
-      author: {
-        connect: { id: ctx.session.userId },
+        author: {
+          connect: { id: ctx.session.userId },
+        },
       },
-    }})
+    })
 
     return challenge
   }

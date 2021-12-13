@@ -19,26 +19,26 @@ export const Challenge = () => {
       </Head>
 
       <div>
-        <main style={{alignContent:"center", alignItems:"center", textAlign:"center"}}>
-        <ChallengeViewer
-          {...challenge}
-        />
-        <Link href={Routes.EditChallengePage({ challengeId: challenge.id })}>
-          <a>Edit</a>
-        </Link>
+        {/* <pre>{JSON.stringify(challenge, null,4)}</pre> */}
+        <main style={{ alignContent: "center", alignItems: "center", textAlign: "center" }}>
+          <ChallengeViewer {...challenge} />
 
-        <button
-          type="button"
-          onClick={async () => {
-            if (window.confirm("This will be deleted")) {
-              await deleteChallengeMutation({ id: challenge.id })
-              router.push(Routes.ChallengesPage())
-            }
-          }}
-          style={{ marginLeft: "0.5rem" }}
-        >
-          Delete
-        </button>
+          <Link href={Routes.EditChallengePage({ challengeId: challenge.id })}>
+            <a>Edit</a>
+          </Link>
+
+          <button
+            type="button"
+            onClick={async () => {
+              if (window.confirm("This will be deleted")) {
+                await deleteChallengeMutation({ id: challenge.id })
+                router.push(Routes.ChallengesPage())
+              }
+            }}
+            style={{ marginLeft: "0.5rem" }}
+          >
+            Delete
+          </button>
         </main>
       </div>
     </>

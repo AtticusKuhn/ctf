@@ -80,7 +80,7 @@ model Challenge {
   author     User               @relation(fields: [authorId], references: [id])
   solvers    solvedChallenges[]
   difficulty String
-  solution String
+  solution   String
 }
 
 model Category {

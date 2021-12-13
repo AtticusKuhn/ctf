@@ -14,7 +14,7 @@ export interface FormProps<S extends z.ZodType<any, any>>
   onSubmit: FinalFormProps<z.infer<S>>["onSubmit"]
   initialValues?: FinalFormProps<z.infer<S>>["initialValues"]
 }
-import arrayMutators from 'final-form-arrays'
+import arrayMutators from "final-form-arrays"
 
 export function Form<S extends z.ZodType<any, any>>({
   children,
@@ -26,13 +26,13 @@ export function Form<S extends z.ZodType<any, any>>({
 }: FormProps<S>) {
   return (
     <FinalForm
-    mutators={{
-      ...arrayMutators
-    }}
+      mutators={{
+        ...arrayMutators,
+      }}
       initialValues={initialValues}
       validate={validateZodSchema(schema)}
       onSubmit={onSubmit}
-      render={({ handleSubmit, submitting, submitError,  }) => (
+      render={({ handleSubmit, submitting, submitError }) => (
         <form onSubmit={handleSubmit} className="form" {...props}>
           {/* Form fields supplied as children are rendered here */}
           {children}

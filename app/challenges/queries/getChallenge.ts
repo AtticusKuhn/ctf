@@ -9,7 +9,16 @@ const GetChallenge = z.object({
 
 export default resolver.pipe(resolver.zod(GetChallenge), resolver.authorize(), async ({ id }) => {
   // TODO: in multi-tenant app, you must add validation to ensure correct tenant
-  const challenge = await db.challenge.findFirst({ where: { id } })
+  const challenge = await db.challenge.findFirst({
+    where: { id },
+    include: {
+      categories: true,
+      author: true,
+      solvers: {
+        take: 2,
+      },
+    },
+  })
 
   if (!challenge) throw new NotFoundError()
 
