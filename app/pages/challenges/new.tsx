@@ -4,15 +4,16 @@ import createChallenge, { CreateChallenge } from "app/challenges/mutations/creat
 // import { ChallengeForm, FORM_ERROR } from "app/challenges/components/ChallengeForm"
 import { ChallengeForm, FORM_ERROR } from "app/challenges/components/ChallengeForm"
 import * as z from "zod"
+import { Suspense } from "react"
 
 const NewChallengePage: BlitzPage = () => {
   const router = useRouter()
   const [createChallengeMutation] = useMutation(createChallenge)
-
+//  return <>hi</>
   return (
     <div>
       <h1>Create New Challenge</h1>
-
+    <Suspense fallback="I have no clue why this is here but if I don't I get an error">
       <ChallengeForm
         submitText="Create Challenge"
         // TODO use a zod schema for form validation
@@ -51,6 +52,8 @@ const NewChallengePage: BlitzPage = () => {
           <a>Challenges</a>
         </Link>
       </p>
+      </Suspense>
+
     </div>
   )
 }

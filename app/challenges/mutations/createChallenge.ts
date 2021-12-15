@@ -6,9 +6,10 @@ export const CreateChallenge = z.object({
   body: z.string(),
   title: z.string(),
   difficulty: z.string(),
+  solution: z.string(),
   categories: z.array(z.string()),
 })
-
+export type CreateChallengeType = z.infer<typeof CreateChallenge>
 export default resolver.pipe(
   resolver.zod(CreateChallenge),
   resolver.authorize(),

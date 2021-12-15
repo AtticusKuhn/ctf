@@ -11,7 +11,7 @@ const Layout: BlitzLayout<{ title?: string }> = ({ title, children }) => {
       <nav>
     <ul className="menu">
         <li className="logo"><Link  href={Routes.Home()}><a>Paly Python CTF</a></Link></li>
-        <li className="item"><Link  href={Routes.ChallengesPage()}><a>Learn</a></Link></li>
+        <li className="item"><Link  href={Routes.ArticlesPage()}><a>Learn</a></Link></li>
         <li className="item"><Link  href={Routes.ChallengesPage()}><a>About</a></Link></li>
  
 
