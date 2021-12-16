@@ -36,17 +36,18 @@ export const EditChallenge = () => {
           //  - Tip: extract mutation's schema into a shared `validations.ts` file and
           //         then import and use it here
           // schema={UpdateChallenge}
-          initialValues={challenge}
+          initialValues={{ ...challenge, categories: challenge.categories.map(c=>c.name)}}
           onSubmit={async (values) => {
             try {
-              const filteredValues = Object.assign(values, {
-                categories: values.categories.map((a) => a.name),
-              })
-              console.log("filteredValues", filteredValues)
+              // const filteredValues = Object.assign(values, {
+              //   categories: values.categories.map((a) => a.name),
+              // })
+              console.log("filteredValues", values)
               const updated = await updateChallengeMutation({
                 id: challenge.id,
-                ...filteredValues,
+                ...values,
               })
+              //@ts-ignore
               await setQueryData(updated)
               router.push(Routes.ShowChallengePage({ challengeId: updated.id }))
             } catch (error: any) {

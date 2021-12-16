@@ -4,8 +4,10 @@ import { z } from "zod"
 
 const UpdateArticle = z.object({
   id: z.number(),
-  name: z.string(),
-})
+  title: z.string(),
+  body: z.string(),
+  // categories: z.array(z.string()),
+});
 
 export default resolver.pipe(
   resolver.zod(UpdateArticle),

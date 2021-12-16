@@ -11,7 +11,7 @@ export const User = () => {
   }
   const [user] = useQuery(getUser, userId || 1)
   if (!user) {
-    return <>oh no we couldn't find this dude</>
+    return <>oh no we couldnt find this dude</>
   }
 
   return (

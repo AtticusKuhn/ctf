@@ -46,7 +46,7 @@ const ViewInCategory: React.FC<{selectedCategories: string | string[]}> = ({sele
       const content = [...articles.map(e=>Object.assign(e, {type:"article"})), ...challenges.map(e=>Object.assign(e, {type:"challenge"})) ]
     console.log("content", content)
     return <>
-        here is all content in the category of "{tags.join(", ")}"
+        here is all content in the category of {tags.join(", ")}
         <Link href={Routes.Categories()}><a>clear selection</a></Link>
         {content.map((e, i)=><ViewContent key={i} {...e} />)}
     </>
