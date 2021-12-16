@@ -1,14 +1,13 @@
-import { Link, useRouter, useMutation, BlitzPage, Routes } from "blitz"
-import Layout from "app/core/layouts/Layout"
-import createChallenge from "app/challenges/mutations/createChallenge"
-import CreateChallengeSchema from "app/challenges/mutations/createChallengeSchema"
-
 // import { ChallengeForm, FORM_ERROR } from "app/challenges/components/ChallengeForm"
 import { ChallengeForm, FORM_ERROR } from "app/challenges/components/ChallengeForm"
-import * as z from "zod"
+import createChallenge from "app/challenges/mutations/createChallenge"
+import CreateChallengeSchema from "app/challenges/mutations/createChallengeSchema"
+import Layout from "app/core/layouts/Layout"
+import { BlitzPage, Link, Routes, useMutation, useRouter } from "blitz"
 import { Suspense } from "react"
 
-const NewChallengePage: BlitzPage = () => {
+
+const NewChallenge: BlitzPage = () => {
   const router = useRouter()
   const [createChallengeMutation] = useMutation(createChallenge)
 //  return <>hi</>
@@ -60,7 +59,7 @@ const NewChallengePage: BlitzPage = () => {
   )
 }
 
-NewChallengePage.authenticate = true
-NewChallengePage.getLayout = (page) => <Layout title={"Create New Challenge"}>{page}</Layout>
+NewChallenge.authenticate = true
+NewChallenge.getLayout = (page) => <Layout title={"Create New Challenge"}>{page}</Layout>
 
-export default NewChallengePage
+export default NewChallenge

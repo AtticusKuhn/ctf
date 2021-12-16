@@ -4,7 +4,7 @@ import { BlitzPage, Link, Routes } from "blitz"
 import React, { Suspense } from "react"
 
 
-const EditChallengePage: BlitzPage = () => {
+const Edit: BlitzPage = () => {
   return (
     <div>
       <Suspense fallback={<div>Loading...</div>}>
@@ -20,7 +20,7 @@ const EditChallengePage: BlitzPage = () => {
   )
 }
 
-EditChallengePage.authenticate = true
-EditChallengePage.getLayout = (page) => <Layout>{page}</Layout>
+Edit.authenticate = true
+Edit.getLayout = (page) => <Layout>{page}</Layout>
 
-export default EditChallengePage
+export default Edit
