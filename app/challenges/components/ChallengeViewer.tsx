@@ -25,7 +25,7 @@ const ChallengeViewer: React.FC<ChallengeViewerProps> = ({
   author,
 }) => {
   const Category = (category:{ id: number; name: string })=>(<>
-  <Link href={Routes.CategoriesPage({category: category.name})}><a>{category.name}</a></Link></>)
+  <Link href={Routes.Categories({category: category.name})}><a>{category.name}</a></Link></>)
   return (
     <>
       <h1>{title}</h1>

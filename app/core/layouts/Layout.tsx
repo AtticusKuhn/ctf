@@ -14,7 +14,7 @@ const Layout: BlitzLayout<{ title?: string }> = ({ title, children }) => {
         <li className="item"><Link  href={Routes.ArticlesPage()}><a>Learn</a></Link></li>
         <li className="item"><Link  href={Routes.ChallengesPage()}><a>About</a></Link></li>
  
-
+        <li className="item"><Link  href={Routes.Categories()}><a>Categories</a></Link></li>
         <li className="item"><Link  href={Routes.ChallengesPage()}><a>Challenges</a></Link></li>
         <li className="item"><Link href={Routes.LoginPage()}><a>Leader Board</a></Link></li>
         <li className="item button"><Link href={Routes.LoginPage()}><a>Log In</a></Link></li>
