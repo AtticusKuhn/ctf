@@ -1,17 +1,10 @@
 import { Ctx, resolver } from "blitz"
 import db from "db"
 import { z } from "zod"
+import CreateChallengeSchema from "./createChallengeSchema"
 
-export const CreateChallenge = z.object({
-  body: z.string(),
-  title: z.string(),
-  difficulty: z.string(),
-  solution: z.string(),
-  categories: z.array(z.string()),
-})
-export type CreateChallengeType = z.infer<typeof CreateChallenge>
 export default resolver.pipe(
-  resolver.zod(CreateChallenge),
+  resolver.zod(CreateChallengeSchema),
   resolver.authorize(),
   async (input, ctx: Ctx) => {
     // TODO: in multi-tenant app, you must add validation to ensure correct tenant

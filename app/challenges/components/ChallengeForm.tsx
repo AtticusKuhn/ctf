@@ -6,7 +6,7 @@ import arrayMutators from "final-form-arrays"
 import React from "react"
 import { Field, Form as FinalForm, FormProps, useFormState } from "react-final-form"
 import { FieldArray } from "react-final-form-arrays"
-import { CreateChallengeType } from "../mutations/createChallenge"
+import { CreateChallengeType } from "../mutations/createChallengeSchema"
 import ChallengeViewer from "./ChallengeViewer"
 export { FORM_ERROR } from "app/core/components/Form"
 // import
