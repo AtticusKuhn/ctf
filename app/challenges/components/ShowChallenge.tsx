@@ -22,7 +22,7 @@ import { Head, Link, useRouter, useQuery, useParam, BlitzPage, useMutation, Rout
           <main style={{ alignContent: "center", alignItems: "center", textAlign: "center" }}>
             <ChallengeViewer {...challenge} />
   
-            <Link href={Routes.EditChallengePage({ challengeId: challenge.id })}>
+            <Link href={Routes.Edit({ challengeId: challenge.id })}>
               <a>Edit</a>
             </Link>
   

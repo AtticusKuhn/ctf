@@ -49,7 +49,7 @@ const ChallengesPage: BlitzPage = () => {
 
       <div>
         <p>
-          <Link href={Routes.NewChallengePage()}>
+          <Link href={Routes.NewChallenge()}>
             <a>Create Challenge</a>
           </Link>
         </p>
