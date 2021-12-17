@@ -14,10 +14,9 @@ const NewChallenge: BlitzPage = () => {
   return (
     <div>
       <h1>Create New Challenge</h1>
-    <Suspense fallback="I have no clue why this is here but if I don't I get an error">
+    {/* <Suspense fallback="I have no clue why this is here but if I don't I get an error"> */}
       <ChallengeForm
         submitText="Create Challenge"
-        // TODO use a zod schema for form validation
         //  - Tip: extract mutation's schema into a shared `validations.ts` file and
         //         then import and use it here
         schema={CreateChallengeSchema}
@@ -53,7 +52,7 @@ const NewChallenge: BlitzPage = () => {
           <a>Challenges</a>
         </Link>
       </p>
-      </Suspense>
+      {/* </Suspense> */}
 
     </div>
   )
