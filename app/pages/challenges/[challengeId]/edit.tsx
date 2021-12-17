@@ -7,6 +7,7 @@ import React, { Suspense } from "react"
 const Edit: BlitzPage = () => {
   return (
     <div>
+      
       <Suspense fallback={<div>Loading...</div>}>
         <EditChallenge />
       </Suspense>

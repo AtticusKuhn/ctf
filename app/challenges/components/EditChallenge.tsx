@@ -16,7 +16,7 @@ export const EditChallenge = () => {
         staleTime: Infinity,
       }
     )
-    const [updateChallengeMutation] = useMutation(updateChallenge)
+    // const [updateChallengeMutation] = useMutation(updateChallenge)
   
     return (
       <>
@@ -41,13 +41,13 @@ export const EditChallenge = () => {
                 //   categories: values.categories.map((a) => a.name),
                 // })
                 console.log("filteredValues", values)
-                const updated = await updateChallengeMutation({
-                  id: challenge.id,
-                  ...values,
-                })
-                //@ts-ignore
-                await setQueryData(updated)
-                router.push(Routes.ShowChallengePage({ challengeId: updated.id }))
+                // const updated = await updateChallengeMutation({
+                //   id: challenge.id,
+                //   ...values,
+                // })
+                // //@ts-ignore
+                // await setQueryData(updated)
+                router.push(Routes.ShowChallengePage({ challengeId: challenge.id }))
               } catch (error: any) {
                 alert(error)
                 console.error(error)

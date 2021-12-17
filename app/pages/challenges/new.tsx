@@ -9,7 +9,7 @@ import { Suspense } from "react"
 
 const NewChallenge: BlitzPage = () => {
   const router = useRouter()
-  const [createChallengeMutation] = useMutation(createChallenge)
+  // const [createChallengeMutation] = useMutation(createChallenge)
 //  return <>hi</>
   return (
     <div>
@@ -28,8 +28,8 @@ const NewChallenge: BlitzPage = () => {
         }}
         onSubmit={async (values) => {
           try {
-            const challenge = await createChallengeMutation(values)
-            router.push(Routes.ShowChallengePage({ challengeId: challenge.id }))
+            // const challenge = await createChallengeMutation(values)
+            router.push(Routes.ShowChallengePage({ challengeId: 1 }))
           } catch (error: any) {
             // debugger
             // for(const err of error.issues){
