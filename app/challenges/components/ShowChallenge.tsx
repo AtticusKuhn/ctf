@@ -30,7 +30,7 @@ import { Head, Link, useRouter, useQuery, useParam, BlitzPage, useMutation, Rout
               type="button"
               onClick={async () => {
                 if (window.confirm("This will be deleted")) {
-                  await deleteChallengeMutation({ id: challenge.id })
+                  // await deleteChallengeMutation({ id: challenge.id })
                   router.push(Routes.ChallengesPage())
                 }
               }}
