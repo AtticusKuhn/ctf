@@ -12,9 +12,9 @@ const ShowChallengePage: BlitzPage = () => {
         </Link>
       </p>
 
-      <Suspense fallback={<div>Loading...</div>}>
+      {/* <Suspense fallback={<div>Loading...</div>}>
         <Challenge />
-      </Suspense>
+      </Suspense> */}
     </div>
   )
 }
