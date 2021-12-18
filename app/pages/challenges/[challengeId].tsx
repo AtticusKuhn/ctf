@@ -1,7 +1,7 @@
-import React, { Suspense } from "react"
-import { Head, Link, useRouter, useQuery, useParam, BlitzPage, useMutation, Routes } from "blitz"
+import Challenge from "app/challenges/components/ShowChallenge"
 import Layout from "app/core/layouts/Layout"
-import  Challenge  from "app/challenges/components/ShowChallenge"
+import { BlitzPage, Link, Routes } from "blitz"
+import React, { Suspense } from "react"
 
 const ShowChallengePage: BlitzPage = () => {
   return (

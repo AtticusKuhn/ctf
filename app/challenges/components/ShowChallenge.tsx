@@ -8,7 +8,7 @@ import { Head, Link, useRouter, useQuery, useParam, BlitzPage, useMutation, Rout
  const Challenge = () => {
     const router = useRouter()
     const challengeId = useParam("challengeId", "number")
-    const [deleteChallengeMutation] = useMutation(deleteChallenge)
+    // const [deleteChallengeMutation] = useMutation(deleteChallenge)
     const [challenge] = useQuery(getChallenge, { id: challengeId })
   
     return (
