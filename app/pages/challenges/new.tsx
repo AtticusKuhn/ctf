@@ -14,7 +14,7 @@ const NewChallenge: BlitzPage = () => {
   return (
     <div>
       <h1>Create New Challenge</h1>
-    <Suspense fallback="I have no clue why this is here but if I don't I get an error">
+    {/* <Suspense fallback="I have no clue why this is here but if I don't I get an error">
       <ChallengeForm
         submitText="Create Challenge"
         //  - Tip: extract mutation's schema into a shared `validations.ts` file and
@@ -52,7 +52,7 @@ const NewChallenge: BlitzPage = () => {
           <a>Challenges</a>
         </Link>
       </p>
-      </Suspense>
+      </Suspense> */}
 
     </div>
   )

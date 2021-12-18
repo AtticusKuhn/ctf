@@ -1,5 +1,7 @@
 const { sessionMiddleware, simpleRolesIsAuthorized } = require("blitz")
-
+/**
+ * @type {import('next').NextConfig}
+ */
 const config = {
   middleware: [
     sessionMiddleware({
